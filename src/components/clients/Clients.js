@@ -21,6 +21,7 @@ class Clients extends Component {
         }, 0)
         return { totalOwed: total}
        }
+       return null
    }
 
   render() {
@@ -34,9 +35,9 @@ class Clients extends Component {
                         <h2><i className="fas fa-users" /> Clients</h2>
                     </div>
                     <div className="col-md-6">
-                        <h5 class="text-right text-secondary">
+                        <h5 className="text-right text-secondary">
                             Total Owed{' '}
-                            <span class="text-primary">
+                            <span className="text-primary">
                                 ${parseFloat(totalOwed).toFixed(2)}
                             </span>
                         </h5>
