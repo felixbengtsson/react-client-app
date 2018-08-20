@@ -13,6 +13,7 @@ import EditClient from './components/clients/EditClient'
 import ClientDetails from './components/clients/ClientDetails'
 import Login from './components/auth/Login'
 
+
 class App extends Component {
 
   render() {
