@@ -6,6 +6,7 @@ import { reduxFirestore, firestoreReducer } from "redux-firestore";
 // Reducers
 import notifyReducer from "./reducers/notifyReducer";
 import settingsReducer from "./reducers/settingsReducer";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAc7xv3uGAz_fvfpsckOvPV0SxpfXlMm2w",
@@ -63,10 +64,7 @@ const initialState = { settings: JSON.parse(localStorage.getItem("settings")) };
 const store = createStoreWithFirebase(
   rootReducer,
   initialState,
-  compose(
-    reactReduxFirebase(firebase),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+  composeWithDevTools(reactReduxFirebase(firebase))
 );
 
 export default store;
