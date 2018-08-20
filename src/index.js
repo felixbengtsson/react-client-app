@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { UserIsAuthenticated, UserIsNotAuthenticated } from './helpers/auth'
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { UserIsAuthenticated, UserIsNotAuthenticated } from "./helpers/auth";
 
-import { Provider } from 'react-redux';
-import store from './store'
+import { Provider } from "react-redux";
+import store from "./store";
 
-import AppNavbar from './components/layout/AppNavbar'
-import Dashboard from './components/layout/Dashboard'
-import AddClient from './components/clients/AddClient'
-import EditClient from './components/clients/EditClient'
-import ClientDetails from './components/clients/ClientDetails'
-import Login from './components/auth/Login'
-
+import AppNavbar from "./components/layout/AppNavbar";
+import Dashboard from "./components/layout/Dashboard";
+import AddClient from "./components/clients/AddClient";
+import EditClient from "./components/clients/EditClient";
+import ClientDetails from "./components/clients/ClientDetails";
+import Login from "./components/auth/Login";
+import Settings from "./components/settings/Settings";
 
 class App extends Component {
-
   render() {
     return (
       <Provider store={store}>
@@ -24,11 +23,36 @@ class App extends Component {
             <AppNavbar />
             <div className="container">
               <Switch>
-                <Route exact path="/" component={UserIsAuthenticated(Dashboard)}></Route>
-                <Route exact path="/client/add" component={UserIsAuthenticated(AddClient)}></Route>
-                <Route exact path="/client/edit/:id" component={UserIsAuthenticated(EditClient)}></Route>
-                <Route exact path="/client/:id" component={UserIsAuthenticated(ClientDetails)}></Route>
-                <Route exact path="/login" component={UserIsNotAuthenticated(Login)}></Route>
+                <Route
+                  exact
+                  path="/"
+                  component={UserIsAuthenticated(Dashboard)}
+                />
+                <Route
+                  exact
+                  path="/client/add"
+                  component={UserIsAuthenticated(AddClient)}
+                />
+                <Route
+                  exact
+                  path="/client/edit/:id"
+                  component={UserIsAuthenticated(EditClient)}
+                />
+                <Route
+                  exact
+                  path="/client/:id"
+                  component={UserIsAuthenticated(ClientDetails)}
+                />
+                <Route
+                  exact
+                  path="/login"
+                  component={UserIsNotAuthenticated(Login)}
+                />
+                <Route
+                  exact
+                  path="/settings"
+                  component={UserIsAuthenticated(Settings)}
+                />
               </Switch>
             </div>
           </div>
@@ -38,4 +62,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));

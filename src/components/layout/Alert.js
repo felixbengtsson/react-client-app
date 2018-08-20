@@ -3,14 +3,20 @@ import classnames from 'classnames'
 
 
 const Alert = (props) => {
-  const { message, messageType } = props;
-  return (
-    <div className={classnames('alert',{
+  const {
+    message,
+    messageType
+  } = props;
+  return ( <
+    div className = {
+      classnames('alert', {
         'alert-success': messageType === 'success',
-        'alert-danger' : messageType === 'error'
-    })}>
-        {message}
-    </div>
+        'alert-danger': messageType === 'error'
+      })
+    } > {
+      message
+    } <
+    /div>
   )
 }
 

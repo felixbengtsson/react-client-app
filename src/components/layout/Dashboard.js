@@ -1,6 +1,6 @@
-import React from 'react';
-import Clients from '../clients/Clients'
-import Sidebar from '../layout/Sidebar'
+import React from "react";
+import Clients from "../clients/Clients";
+import Sidebar from "../layout/Sidebar";
 
 export default () => {
   return (
@@ -11,7 +11,6 @@ export default () => {
       <div className="col-md-2">
         <Sidebar />
       </div>
-
     </div>
-  )
-}
+  );
+};
