@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
+import logo from "./rest.png";
 
 class AddClient extends Component {
   state = {
@@ -38,6 +39,7 @@ class AddClient extends Component {
 
     return (
       <div>
+        <img src={logo} alt="" width="200" height="200" />
         <div className="row">
           <div className="col-md-6">
             <Link to="/" className="btn btn-link">
