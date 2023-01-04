@@ -16,7 +16,7 @@
     "redux-firestore": "^0.5.7"
   },
   "devDependencies": {
-    "react-scripts": "1.1.4",
+    "react-scripts": "5.0.1",
     "redux-devtools-extension": "^2.13.5"
   },
   "scripts": {
